@@ -15,11 +15,9 @@ public class BaseTest {
 	@BeforeMethod
 	public void setUp() {
 		
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless", "--disable-gpu", "--lang=en-US");
 	
 		Log.info("Starting WebDriver");
-		driver = new ChromeDriver(options);
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		Log.info("Navigation to URL....");
 		driver.get("https://admin-demo.nopcommerce.com/login");		
