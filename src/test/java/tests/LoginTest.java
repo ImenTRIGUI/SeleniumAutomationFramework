@@ -21,10 +21,13 @@ public class LoginTest extends BaseTest {
 		loginPage.enterPassword("admin");
 		loginPage.clickLogin();
 		
-		
+		String expectedMessage = "Un instant…"; 
+		String actualMessage = driver.getTitle();
+
 		System.out.println("The title of the page is: "+ driver.getTitle());
 		Log.info("Verifying page title");
-		Assert.assertEquals(driver.getTitle(), "Un instant…");
+		
+		Assert.assertEquals(actualMessage, expectedMessage, "The title of the page not correct");
 	}
 
 }

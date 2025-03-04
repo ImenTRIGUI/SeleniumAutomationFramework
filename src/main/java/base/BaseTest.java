@@ -2,6 +2,7 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -13,9 +14,12 @@ public class BaseTest {
 
 	@BeforeMethod
 	public void setUp() {
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless", "--disable-gpu", "--lang=en-US");
 	
 		Log.info("Starting WebDriver");
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		Log.info("Navigation to URL....");
 		driver.get("https://admin-demo.nopcommerce.com/login");		
