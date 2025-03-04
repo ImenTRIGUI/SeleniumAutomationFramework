@@ -3,10 +3,11 @@
   <groupId>com.test.automation</groupId>
   <artifactId>selenium.framework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-    <dependencies>
+  
+  <dependencies>
  
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-  	<dependency>
+    <dependency>
   		<groupId>org.seleniumhq.selenium</groupId>
     	<artifactId>selenium-java</artifactId>
     	<version>4.29.0</version>
@@ -34,10 +35,23 @@
 	    <version>2.24.3</version>
 	</dependency>
 		
-	
-
-	
-	</dependencies>
+  </dependencies>
+  
+       <build>
+        <plugins>
+            <!-- Maven Surefire Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile> <!-- Fichier de configuration TestNG -->
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 
 
